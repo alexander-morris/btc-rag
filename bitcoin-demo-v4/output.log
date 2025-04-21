@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/almorris/rag-test/bitcoin-demo-v4/test_bitcoin_rag.py", line 3, in <module>
+    from bitcoin_rag import BitcoinRAG
+  File "/Users/almorris/rag-test/bitcoin-demo-v4/bitcoin_rag.py", line 5, in <module>
+    from kno_cache import KnoCacheManager, KnoCacheEntry
+  File "/Users/almorris/rag-test/bitcoin-demo-v4/kno_cache.py", line 11, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

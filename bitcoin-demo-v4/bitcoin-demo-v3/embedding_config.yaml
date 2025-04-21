@@ -1,0 +1,54 @@
+# Bitcoin RAG System Configuration
+
+# Embedding settings
+embedding:
+  default_model: codebert
+  chunk_size: 1000
+  chunk_overlap: 200
+  cache_dir: embedding_cache
+
+# Subsystem definitions
+subsystems:
+  validation:
+    description: "Transaction and block validation"
+    key_files:
+      - validation.cpp
+      - consensus/validation.h
+      - script/interpreter.cpp
+  p2p:
+    description: "Peer-to-peer networking"
+    key_files:
+      - net_processing.cpp
+      - net.h
+      - protocol.h
+  mining:
+    description: "Mining and proof-of-work"
+    key_files:
+      - miner.cpp
+      - pow.cpp
+  wallet:
+    description: "Wallet functionality"
+    key_files:
+      - wallet/wallet.cpp
+      - wallet/feebumper.cpp
+
+# LLM settings
+llm:
+  model: claude-3-sonnet-20240229
+  temperature: 0.1
+  max_tokens: 4000
+
+# Retrieval settings
+retrieval:
+  k: 5
+  score_threshold: 0.7
+
+# File patterns
+file_patterns:
+  include:
+    - "*.cpp"
+    - "*.h"
+  exclude:
+    - "test/*"
+    - "qt/*"
+    - "doc/*" 
